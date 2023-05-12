@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Ping command usage
+# ping command usage
 if [ "$1" ]; then
     ping -c 5 "$1"
 else
