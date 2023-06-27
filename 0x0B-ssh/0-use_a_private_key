@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Connects to a server using SSH with single-character flags
+
+ssh -i ~/.ssh/school -o "User=ubuntu" your-server-ip-address
+
