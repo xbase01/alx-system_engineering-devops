@@ -2,7 +2,7 @@
 # This script displays different messages based on the loop iteration
 
 
-=1
+i=1
 
 while [ $i -le 20 ]
 do
