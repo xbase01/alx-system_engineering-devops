@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Install nginx
+sudo apt-get update
+sudo apt-get -y install nginx
+
+# Configure nginx
+sudo sed -i 's|listen 80 default_server|listen 80|' /etc/nginx/sites-available/default
+
+# Create index.html file with "Hello World!" content
+echo "<html><body><h1>Hello World!</h1></body></html>" | sudo tee /var/www/html/index.html >/dev/null
+
+# Restart nginx
+sudo service nginx restart
+
