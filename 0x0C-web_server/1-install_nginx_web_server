@@ -1,15 +1,17 @@
 #!/usr/bin/env bash
 
-# Install nginx
-sudo apt-get update
-sudo apt-get -y install nginx
+# Update the package lists
+apt-get update
 
-# Configure nginx
-sudo sed -i 's|listen 80 default_server|listen 80|' /etc/nginx/sites-available/default
+# Install nginx server
+apt-get -y install nginx
 
-# Create index.html file with "Hello World!" content
-echo "<html><body><h1>Hello World!</h1></body></html>" | sudo tee /var/www/html/index.html >/dev/null
+# Allow HTTP traffic through the firewall
+ufw allow 'Nginx HTTP'
 
-# Restart nginx
-sudo service nginx restart
+# Create the HTML file with "Hello World!" content
+echo "Hello World!" > /var/www/html/index.html
+
+# Start the nginx service
+service nginx start
 
