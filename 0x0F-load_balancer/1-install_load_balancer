@@ -39,8 +39,8 @@ frontend aneke-frontend
 
 backend aneke-backend
     balance roundrobin
-    server web-01 18.234.107.208:80 check
-    server web-02 54.237.10.148:80 check
+    server web-01 220812-web-01:80 check
+    server web-02 220812-web-02:80 check
 
 EOF
 
